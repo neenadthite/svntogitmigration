@@ -1,3 +1,5 @@
+Migrates SVN repo to GIT along with all commit history 
+
 #Pre-requisitive:
 sudo apt-get install git-core git-svn ruby rubygems
 
