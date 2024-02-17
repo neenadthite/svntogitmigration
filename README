@@ -1,3 +1,6 @@
+#Pre-requisitive:
+sudo apt-get install git-core git-svn ruby rubygems
+
 #Step 1: Create a directory
 
 ~/ninad$ mkdir gitrepo
