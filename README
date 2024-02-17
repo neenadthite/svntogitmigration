@@ -59,7 +59,7 @@ Date:   Sat Feb 17 16:30:27 2024 +0000
 
     added svn2git migration test folder
 
-~/ninad/gitrepo/.svn2git:~/ninad/gitrepo/.svn2git$ git push --set-upstream origin master
+~/ninad/gitrepo/.svn2git$ git push --set-upstream origin master
 Username for 'https://github.com': neenadthite
 Password for 'https://neenadthite@github.com': 
 Enumerating objects: 8, done.
