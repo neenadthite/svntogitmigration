@@ -1,0 +1,97 @@
+#Step 1: Create a directory
+
+~/ninad$ mkdir gitrepo
+~/ninad$ cd gitrepo/
+
+#Step 2: Fetch SVN Repo
+
+~/ninad/gitrepo$ ls
+~/ninad/gitrepo$ svn2git https://svn.svnhost.com/svn/svnreponame/ --rootistrunk --username <svn username>
+
+Initialized empty Git repository in /home/ninad/gitrepo/.git/
+W: Ignoring error from SVN, path probably does not exist: (160013): Filesystem has no item: File not found: revision 100, path '/svnreponame'
+W: Do not be alarmed at the above message git-svn is just searching aggressively for old history.
+This may take a while on large repositories
+Checked through rxxa
+Checked through rxxb
+Checked through rxxc
+rxxx1 = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (refs/remotes/svn/trunk)
+	A	test.c
+rxxx2 = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxy (refs/remotes/svn/trunk)
+	A	svnfile.c
+rxxx3 = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxz (refs/remotes/svn/trunk)
+Checked out HEAD:
+  https://svn.svnhost.com/svn/svnreponame/ rxxx3
+~/ninad/gitrepo$ ls
+svnfile.c  test.c
+
+#Step 3: Add Authors
+
+~/ninad/gitrepo$ mkdir .svn2git
+~/ninad/gitrepo$ cd .svn2git/
+~/ninad/gitrepo/.svn2git$ vi authors
+
+ninad.thite = neenadthite <neenadthite@outlook.com>
+
+#Step 4: Link the SVN repo with GIT repo
+
+:~/ninad/gitrepo/.svn2git$ git remote add origin https://github.com/neenadthite/svntogitmigration.git
+
+#Step 5: Push the Repo alongwith SVN commit history on GIT 
+
+~/ninad/gitrepo/.svn2git$ git log
+
+commit xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (HEAD -> master, svn/trunk)
+Author: ninad.thite <ninad.thite@c5c1dcfa-d19d-414b-80e3-91ed9bf72354>
+Date:   Sat Feb 17 16:49:41 2024 +0000
+
+    file added in svn repo for migration testing
+
+commit xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Author: ninad.thite <ninad.thite@c5c1dcfa-d19d-414b-80e3-91ed9bf72354>
+Date:   Sat Feb 17 16:48:04 2024 +0000
+
+    addedtestcode
+
+commit xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Author: ninad.thite <ninad.thite@c5c1dcfa-d19d-414b-80e3-91ed9bf72354>
+Date:   Sat Feb 17 16:30:27 2024 +0000
+
+    added svn2git migration test folder
+
+~/ninad/gitrepo/.svn2git:~/ninad/gitrepo/.svn2git$ git push --set-upstream origin master
+Username for 'https://github.com': neenadthite
+Password for 'https://neenadthite@github.com': 
+Enumerating objects: 8, done.
+Counting objects:  12% (1/8)
+Counting objects:  25% (2/8)
+Counting objects:  37% (3/8)
+Counting objects:  50% (4/8)
+Counting objects:  62% (5/8)
+Counting objects:  75% (6/8)
+Counting objects:  87% (7/8)
+Counting objects: 100% (8/8)
+Counting objects: 100% (8/8), done.
+Delta compression using up to 16 threads
+Compressing objects:  20% (1/5)
+Compressing objects:  40% (2/5)
+Compressing objects:  60% (3/5)
+Compressing objects:  80% (4/5)
+Compressing objects: 100% (5/5)
+Compressing objects: 100% (5/5), done.
+Writing objects:  12% (1/8)
+Writing objects:  25% (2/8)
+Writing objects:  37% (3/8)
+Writing objects:  50% (4/8)
+Writing objects:  62% (5/8)
+Writing objects:  75% (6/8)
+Writing objects:  87% (7/8)
+Writing objects: 100% (8/8)
+Writing objects: 100% (8/8), 813 bytes | 813.00 KiB/s, done.
+Total 8 (delta 1), reused 8 (delta 1)
+remote: Resolving deltas:   0% (0/1)
+remote: Resolving deltas: 100% (1/1)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/neenadthite/svntogitmigration.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
