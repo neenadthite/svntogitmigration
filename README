@@ -89,9 +89,9 @@ Writing objects:  87% (7/8)
 Writing objects: 100% (8/8)
 Writing objects: 100% (8/8), 813 bytes | 813.00 KiB/s, done.
 Total 8 (delta 1), reused 8 (delta 1)
-remote: Resolving deltas:   0% (0/1)
-remote: Resolving deltas: 100% (1/1)
-remote: Resolving deltas: 100% (1/1), done.
+remote: Resolving deltas:   0% (0/1)
+remote: Resolving deltas: 100% (1/1)
+remote: Resolving deltas: 100% (1/1), done.
 To https://github.com/neenadthite/svntogitmigration.git
  * [new branch]      master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
