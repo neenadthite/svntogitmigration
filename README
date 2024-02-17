@@ -35,7 +35,7 @@ ninad.thite = neenadthite <neenadthite@outlook.com>
 
 #Step 4: Link the SVN repo with GIT repo
 
-:~/ninad/gitrepo/.svn2git$ git remote add origin https://github.com/neenadthite/svntogitmigration.git
+~/ninad/gitrepo/.svn2git$ git remote add origin https://github.com/neenadthite/svntogitmigration.git
 
 #Step 5: Push the Repo alongwith SVN commit history on GIT 
 
